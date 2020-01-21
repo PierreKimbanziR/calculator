@@ -3,7 +3,7 @@ import "./Button.css";
 
 class Button extends Component {
   isOperator = val => {
-    return !isNaN(val) || val === "." || val === ",";
+    return !isNaN(val) || val === "." || val === "," || val === "=";
   };
   render() {
     return (
@@ -11,7 +11,7 @@ class Button extends Component {
         className={`button ${
           this.isOperator(this.props.children) ? "" : "operator"
         }`}
-        oncClick={() => this.props.handleClick(this.props.children)}
+        onClick={() => this.props.handleClick(this.props.children)}
       >
         {this.props.children}
       </div>
